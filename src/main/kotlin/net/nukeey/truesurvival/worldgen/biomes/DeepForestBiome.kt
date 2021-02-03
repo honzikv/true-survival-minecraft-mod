@@ -13,6 +13,9 @@ import net.minecraft.world.biome.BiomeEffects
 import net.minecraft.world.biome.GenerationSettings
 import net.minecraft.world.biome.SpawnSettings
 import net.minecraft.world.biome.SpawnSettings.SpawnEntry
+import net.minecraft.world.gen.GenerationStep
+import net.minecraft.world.gen.feature.ConfiguredFeature
+import net.minecraft.world.gen.feature.ConfiguredFeatures
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures.*
 import net.nukeey.truesurvival.MOD_ID
 import net.nukeey.truesurvival.worldgen.biomes.core.FOREST_SURFACE_BUILDER
@@ -55,6 +58,7 @@ object DeepForestBiome {
             addFrozenTopLayer(this)
             addClay(this)
 
+            feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.TREES_GIANT)
         }
 
         return Biome.Builder().apply {
